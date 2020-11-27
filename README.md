@@ -16,7 +16,7 @@ Examples that fall into this include common scripts and activities, or building 
 |**InitializeDashboard**|Enables the Kubernetes dashboard on an RABAC enabled cluster, as well as retrieval of the token to access it.<br>***Location*** [Dashboard.md](Azure%20Kubernetes%20Service/Configuration/Dashboard.md)|  |
 |**Pod Scheduling**|Demonstrates how to perform scheduling tasks such as balancing pods evenly across nodes using (anti-)affinity, and targeting a specific node pool.<br/>***Location*** [Affinity.md](Azure%20Kubernetes%20Service/Scheduling/Affinity.md)| |
 |**Configuring Auto-scaling**|Configures a Kubernetes cluster to auto-scale using the cluster auto-scaler and pods using the horizontal pod scaler.<br/>***Location*** [Auto Scaling.md](Azure%20Kubernetes%20Service/Scaling/Auto%20Scaling.md)| |
-|**Configuring Managed Service Identities for Pods**|Configuring Azure Managed Service Identity for pods in the cluster to access Azure resources.<br/>***Location*** [Pod Identities.md](Azure%20Kubernetes%20Service/Configuration/Pod%20Identitites.md)| |
+|**Configuring Managed Service Identities for Pods**|Configuring Azure Managed Service Identity for pods in the cluster to access Azure resources.<br/>***Location*** [Pod Identities.md](Azure%20Kubernetes%20Service/Configuration/Pod%20Identities.md)| |
 
 ## Additional Information
 
