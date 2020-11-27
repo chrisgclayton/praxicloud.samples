@@ -18,6 +18,7 @@ Examples that fall into this include common scripts and activities, or building 
 |**Taints and Tolerations**|Although technically part of scheduling this sample describes how to add taints to nodes and identify pods as tolerating thing.<br/>***Location*** [Affinity.md](Azure%20Kubernetes%20Service/Scheduling/Taints.md)| |
 |**Configuring Auto-scaling**|Configures a Kubernetes cluster to auto-scale using the cluster auto-scaler and pods using the horizontal pod scaler.<br/>***Location*** [Auto Scaling.md](Azure%20Kubernetes%20Service/Scaling/Auto%20Scaling.md)| |
 |**Configuring Managed Service Identities for Pods**|Configuring Azure Managed Service Identity for pods in the cluster to access Azure resources.<br/>***Location*** [Pod Identities.md](Azure%20Kubernetes%20Service/Configuration/Pod%20Identities.md)| |
+|**Exposing a Service Publicly**|Exposing a service publicly can be done using layer 4 or layer 7 of the OSI. <br />***Location*** [Ingress.md](Azure%20Kubernetes%20Service/Ingress/Ingress.md)| |
 
 ## Additional Information
 
