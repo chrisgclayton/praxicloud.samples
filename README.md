@@ -11,7 +11,7 @@ Examples that fall into this include common scripts and activities, or building 
 
 |Sample Name| Description | Notes |
 | ------------- | ------------- | ------------- |
-|**Kubectl Configuration**| Demonstrates common kubectl actions when working with AKS including configuring access to the cluster.<br />**Location** [./Azure Kubernetes Service/Configuration/Kubectl.md](Azure%20Kubernetes%20Service/Configuration/Kubectl.md) |  |
+|**Kubectl Configuration**| Demonstrates common kubectl actions when working with AKS including configuring access to the cluster.<br />**Location** [Kubectl.md](Azure%20Kubernetes%20Service/Configuration/Kubectl.md) |  |
 |**Azure Container Registry**| How to leverage Azure Container Registry with Azure Kubernetes Service, whether being set as the default for the cluster or one off image access.<br />***Location*** ./Azure Kubernetes Service/Configuration/Azure Container Registry.md | |
 |**InitializeDashboard**|Enables the Kubernetes dashboard on an RABAC enabled cluster, as well as retrieval of the token to access it.<br>***Location*** ./Azure Kubernetes Service/Configuration/Dashboard.md|  |
 |**Pod Scheduling**|Demonstrates how to perform scheduling tasks such as balancing pods evenly across nodes using (anti-)affinity, and targeting a specific node pool.<br/>***Location*** ./Azure Kubernetes Service/Scheduling/Affinity.md| |
