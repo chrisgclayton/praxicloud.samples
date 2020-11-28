@@ -9,10 +9,10 @@ These samples show how to configure both the Kubernetes Pod Auto-scaler and Node
 
 ### The Code
 ```Azure CLI
-# Set autoscaling on for the cluster for all node pools
-az aks update --resource-group myResourceGroup --name myAKSCluster --cluster-autoscaler-profile --min-count {Minimum number of Nodes} --max-count {Maximum number of Nodes}
+# Set autoscaling on for the cluster
+az aks update --resource-group myResourceGroup --name myAKSCluster --enable-cluster-autoscaler
 
-# Override the profile with specific configuration
+# With multiple node pools it will indicate to use the nodepool command to configure, as follows
 az aks nodepool update --resource-group {Cluster Resource Group} --cluster-name {Cluster Name} --name {Node Pool Name} --enable-cluster-autoscaler --min-count {Minimum number of Nodes} --max-count {Maximum number of Nodes}
 ```
 ### Notes

@@ -45,6 +45,11 @@ echo {base 64 string} | base64 --decode
 # For Windows replace {base 64 string} with the output of the above command
 powershell [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String('{base 64 string}'))
 
+# On Windows this can be done in 1 command in PowerShell
+# [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String(((kubectl get secret (kubectl get serviceaccount dashboard -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}"))))
+
+# on Linux this can be done in 1 command using Bash
+# kubectl get secret $(kubectl get serviceaccount dashboard -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode
 
 ```
 
