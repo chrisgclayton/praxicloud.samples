@@ -9,6 +9,8 @@ Examples that fall into this include common scripts and activities, or building 
 
 ## Samples
 
+In these samples anytime an AKS instance is expected to be in existence it is based on an environment starting with the configuration that can be found [here](Azure%20Kubernetes%20Service/Configuring%20the%20cluster.md).
+
 |Sample Name| Description | Notes |
 | ------------- | ------------- | ------------- |
 |**Kubectl Configuration**| Demonstrates common kubectl actions when working with AKS including configuring access to the cluster.<br />**Location** [Kubectl.md](Azure%20Kubernetes%20Service/Configuration/Kubectl.md) |  |
