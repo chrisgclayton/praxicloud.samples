@@ -181,3 +181,13 @@ export IDENTITY_RESOURCE_ID="$(az identity show -g $resourceGroup -n $identityNa
 # Assign role reader rights to the identity so it can access the resource group
 export IDENTITY_ASSIGNMENT_ID="$(az role assignment create --role Reader --assignee ${IDENTITY_CLIENT_ID} --scope /subscriptions/$subscriptionId/resourceGroups/$resourceGroup --query id -otsv)"
 ```
+
+# Setup the Jump Box
+
+Setup an Ubuntu Server 20.04 LTS machine without any inbound port rules.
+
+![JumpBoxBasic](./cluster-setup-images/JumpBoxBasic.jpg)
+
+Place the  virtual machine on the support subnet without any NIC Network Security Group.
+
+![JumpboxNetworking](./cluster-setup-images/JumpboxNetworking.jpg)
