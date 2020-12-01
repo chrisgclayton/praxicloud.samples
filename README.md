@@ -21,6 +21,7 @@ In these samples anytime an AKS instance is expected to be in existence it is ba
 |**Configuring Auto-scaling**|Configures a Kubernetes cluster to auto-scale using the cluster auto-scaler and pods using the horizontal pod scaler.<br/>***Location*** [Auto Scaling.md](Azure%20Kubernetes%20Service/Scaling/Auto%20Scaling.md)| |
 |**Configuring Managed Service Identities for Pods**|Configuring Azure Managed Service Identity for pods in the cluster to access Azure resources.<br/>***Location*** [Pod Identities.md](Azure%20Kubernetes%20Service/Configuration/Pod%20Identities.md)| |
 |**Exposing a Service Publicly**|Exposing a service publicly can be done using layer 4 or layer 7 of the OSI. <br />***Location*** [Ingress.md](Azure%20Kubernetes%20Service/Ingress/Ingress.md)| |
+|**DemoContainer**|Demonstrates creating a basic container that includes liveness problem, availability probe, logging, metrics and responding to the controllers scale events.<br />***Location***[DemoContainer](Azure%20Kubernetes%20Service/DemoContainer/Readme.md)| This container is implemented as a Kubernetes ReplicaSet with Prometheus endpoint. |
 
 ## Additional Information
 

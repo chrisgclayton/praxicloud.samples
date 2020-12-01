@@ -1,0 +1,94 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-service
+  namespace: demonamespace
+  labels:
+      app: demo-container-app
+spec:
+  loadBalancerIP: 52.226.136.35
+  type: LoadBalancer
+  ports:
+  - name: prometheus-port
+    port: 9600
+    targetPort: 9600
+  selector:
+      app: demo-container-app
+
+---
+
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: demo-replicaset
+  namespace: demonamespace
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: demo-container-app
+  template:
+    metadata:
+      labels:
+        app: demo-container-app
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: agentpool
+                operator: In
+                values:
+                - worker
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - podAffinityTerm:
+              labelSelector:
+                matchLabels:
+                  app: demo-container-app
+              namespaces:
+              - demonamespace
+              topologyKey: kubernetes.io/hostname
+            weight: 100
+      serviceAccountName: demosrvact
+      containers:
+      - name: demo-container
+        image: democluster.azurecr.io/democontainer:001
+        imagePullPolicy: Always
+        ports:
+        - name: prometheus-port
+          containerPort: 9600
+        resources:
+          requests:          
+            cpu: 100m
+            memory: 128Mi
+          limits:          
+            cpu: 250m
+            memory: 256Mi
+        livenessProbe:
+          tcpSocket:
+            port: 10101
+          initialDelaySeconds: 15
+          periodSeconds: 5
+          failureThreshold: 3
+          successThreshold: 1
+        readinessProbe:
+          tcpSocket:
+            port: 10102
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          failureThreshold: 3
+          successThreshold: 1 
+        env:
+          - name: POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: POD_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+          - name: PrometheusPort
+            value: "9600"
+      restartPolicy: Always
